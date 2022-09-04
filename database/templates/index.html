@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<link rel="stylesheet" type="text/css" href={% static 'asgard/css/bootstrap.css' %}/>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asgard</title>
+</head>
+<body>
+    <h1 class="display-4 text-center text-primary">A Website About Asgard</h1>
+    <div class="text-center display-1 row">
+        <div class="col-sm col-6">
+        <button id="Geography" type="submit" class="btn btn-outline-secondary" onclick="getDetails(this.id)">Geography</button>
+        </div>
+        <div class="col-sm col-6">
+        <button id="History" type="submit" class="btn btn-outline-secondary" onclick="getDetails(this.id)">History</button>
+        </div>
+        <div class="col-sm col-6">
+        <button id="Culture" type="submit" class="btn btn-outline-secondary" onclick="getDetails(this.id)">Culture</button>
+        </div>
+        <div class="col-sm col-6">
+        <button id="Language" type="submit" class="btn btn-outline-secondary" onclick="getDetails(this.id)">Language</button>
+        </div>
+    </div>
+    <br>
+    <div class="alert alert-success text-center" role="alert">
+        <h4 class="alert-heading" id="text"></h4>
+    </div>
+<script>
+    function getDetails(id){
+        var x =document.getElementById("text");
+        var request = new XMLHttpRequest();
+        request.open("GET","http://localhost:8000/get/"+id,false);
+        request.send(null);
+        var object = JSON.parse(request.responseText);
+        x.innerHTML = object.message;
+    }
+</script>
+</body>
+</html>
