@@ -5,7 +5,14 @@ from .models import detail
 # Create your views here.
 
 def index(request):
-    return render(request, 'index.html')
+    try:
+        x = detail.objects.get(key = "Geography")
+        if x:
+            return render(request, 'index.html')
+
+    except Exception as e:
+        response = redirect('http://localhost:8000/populate')
+        return response
 
 def getDetails(request, key):
     try:
