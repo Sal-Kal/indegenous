@@ -11,7 +11,7 @@ def index(request):
             return render(request, 'index.html')
 
     except Exception as e:
-        response = redirect('http://localhost:8000/populate')
+        response = redirect('https://sal-kal.herokuapp.com/populate')
         return response
 
 def getDetails(request, key):
@@ -38,7 +38,7 @@ def populate(requet):
         new_detail.save()
         new_detail = detail(key = "Language", value = "Language barriers in Asgard do not allow outsiders to live.")
         new_detail.save()
-        response = redirect('http://localhost:8000/')
+        response = redirect('http://sal-kal.herokuapp.com/')
         return response
     except Exception as e:
         return JsonResponse({
