@@ -9,7 +9,10 @@ Use the following command to start the server
 ```
 python manage.py runserver
 ```
-
+The Server should run on port no 8000. Use the following url to access the asgard webpage:
+```
+http://localhost:8000/
+```
 The data in the database needs to be added manually using the django's default admin page
 
 ```
