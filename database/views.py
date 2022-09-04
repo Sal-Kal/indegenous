@@ -38,7 +38,7 @@ def populate(requet):
         new_detail.save()
         new_detail = detail(key = "Language", value = "Language barriers in Asgard do not allow outsiders to live.")
         new_detail.save()
-        response = redirect('http://sal-kal.herokuapp.com/')
+        response = redirect('https://sal-kal.herokuapp.com/')
         return response
     except Exception as e:
         return JsonResponse({

@@ -32,7 +32,7 @@
     function getDetails(id){
         var x =document.getElementById("text");
         var request = new XMLHttpRequest();
-        request.open("GET","http://localhost:8000/get/"+id,false);
+        request.open("GET","https://sal-kal.herokuapp.com/get/"+id,false);
         request.send(null);
         var object = JSON.parse(request.responseText);
         x.innerHTML = object.message;
