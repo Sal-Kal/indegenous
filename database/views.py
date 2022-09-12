@@ -11,7 +11,7 @@ def index(request):
             return render(request, 'index.html')
 
     except Exception as e:
-        response = redirect('https://sal-kal.herokuapp.com/populate')
+        response = redirect('https://indegenous.herokuapp.com/populate')
         return response
 
 def getDetails(request, key):
@@ -28,7 +28,7 @@ def getDetails(request, key):
             "message" : str(e)
         })
 
-def populate(requet):
+def populate(request):
     try:
         new_detail = detail(key = "Geography", value = "The Geography of Asgard is dominated by huge mountains.")
         new_detail.save()
@@ -38,7 +38,7 @@ def populate(requet):
         new_detail.save()
         new_detail = detail(key = "Language", value = "Language barriers in Asgard do not allow outsiders to live.")
         new_detail.save()
-        response = redirect('https://sal-kal.herokuapp.com/')
+        response = redirect('https://indegenous.herokuapp.com/')
         return response
     except Exception as e:
         return JsonResponse({

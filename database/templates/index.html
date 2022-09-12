@@ -1,11 +1,11 @@
 {% load static %}
 <!DOCTYPE html>
-<link rel="stylesheet" type="text/css" href="{% static 'asgard/css/bootstrap.min.css' %}"/>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'asgard/css/bootstrap.min.css' %}"/>
     <title>Asgard</title>
 </head>
 <body>
@@ -32,7 +32,7 @@
     function getDetails(id){
         var x =document.getElementById("text");
         var request = new XMLHttpRequest();
-        request.open("GET","https://sal-kal.herokuapp.com/get/"+id,false);
+        request.open("GET","https://indegenous.herokuapp.com/get/"+id,false);
         request.send(null);
         var object = JSON.parse(request.responseText);
         x.innerHTML = object.message;
