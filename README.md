@@ -3,6 +3,11 @@ Use the following command to install Django
 ```
 pip install django
 ```
+Use the following commands to create database
+```
+python manage.py makemigrations
+python manage.py migrate
+```
 
 Use the following command to start the server
 
